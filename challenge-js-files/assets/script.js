@@ -1,4 +1,4 @@
-let table = document.getElementById("table1");
+/*let table = document.getElementById("table1");
 var data = [];
 for (var i = 1; i < table.rows.length; i++) {
     var tableRow = table.rows[i];
@@ -12,19 +12,23 @@ for (var i = 1; i < table.rows.length; i++) {
 }
 data[0].shift();
 console.log(data);
-
+*/
 
 
 // get table
 /* Recupere la valeur année */
-/*let arr = [];
+let arr = [];
 let myTable = document.getElementById("table1").getElementsByTagName("tbody")[0];
 console.log(myTable);
-/*for (let e of myTable.cells) {
-    arr.push(e.innerText);
+let i = 3;
+for (let e of myTable.rows) {
+    let a = e.cells[i].innerText;
+    arr.push(a);
+    i++;
+
 }
 arr.splice(0, 2);
-console.log(arr);*/
+console.log(arr);
 
 
 /*let country = () => {
@@ -38,28 +42,9 @@ console.log(arr);*/
 
 
 /****/
-/*var table = document.getElementById('table1').getElementsByTagName("tbody")[0];
-var json = []; // First row needs to be headers 
-var headers = [];
-for (var i = 0; i < table.rows[0].cells.length; i++) {
-    headers[i] = table.rows[0].cells[i].innerHTML.toLowerCase().replace(/ /gi, '');
-}
-console.log(headers);
-// Go through cells 
-for (var i = 1; i < table.rows.length; i++) {
-    var tableRow = table.rows[i];
-    var rowData = {};
-    for (var j = 0; j < tableRow.cells.length; j++) {
-        rowData[headers[j]] = tableRow.cells[j].innerHTML;
-    }
-
-    json.push(rowData);
-}*/
-
-
 //country();
 //years();
-let arr;
+
 var ctx = document.getElementById('myChart');
 var myChart = new Chart(ctx, {
     type: 'bar',
@@ -67,7 +52,7 @@ var myChart = new Chart(ctx, {
         labels: arr,
         datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [12, 19, 3, 5, 2, 3, 5, 2, 3, 5, 2],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
