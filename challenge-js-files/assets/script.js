@@ -1,75 +1,94 @@
 /*let table = document.getElementById("table1");
-var data = [];
-for (var i = 1; i < table.rows.length; i++) {
-    var tableRow = table.rows[i];
-    var rowData = [];
-    for (var j = 1; j < tableRow.cells.length; j++) {
+let data = [];
+for (let i = 1; i < table.rows.length; i++) {
+    let tableRow = table.rows[i];
+    let rowData = [];
+    console.log(tableRow);
+    for (let j = 1; j < tableRow.cells.length; j++) {
         rowData.push(tableRow.cells[j].innerHTML);
-
     }
-
     data.push(rowData);
 }
 data[0].shift();
 console.log(data);
+let belgique = [];
+for (let i = 1; i < 12; i++) {
+
+    belgique.push(data[1][i]);
+}
+console.log(belgique);
 */
+let years = [];
+for (let i = 0; i < 11; i++) {
+    years.push(data[0][i]);
+}
+console.log(years);
 
+/*let table = document.getElementById("table1");
 
+let row = item.row[3];
+console.log(row);*/
+/*const obj = Object.assign({ data }, data);
+console.log(obj);*/
+/*const obj = {
+    years: [data[0]],
+    country: [data[1][0]],
+};
+
+console.log(obj.country);
+/*let swapKeysAndValues = (object) => {
+        let keysAndValuesSwapped = {};
+
+        function swap(object) {
+            for (let key in object) {
+                keysAndValuesSwapped[object[key]] = key;
+            }
+            return keysAndValuesSwapped;
+        }
+        return
+        swap(object);
+    }*/
 // get table
-/* Recupere la valeur année */
+/*
 let arr = [];
 let myTable = document.getElementById("table1").getElementsByTagName("tbody")[0];
-console.log(myTable);
-let i = 3;
-for (let e of myTable.rows) {
-    let a = e.cells[i].innerText;
-    arr.push(a);
-    i++;
-
+for (let elementR of myTable.rows) {
+    for (let elementCell of elementR.cells) {
+        let a = elementCell.innerText;
+        arr.push(a);
+    }
 }
 arr.splice(0, 2);
-console.log(arr);
 
+let b = arr.slice();
+console.log(b);
+*/
+let c = [];
+let myTable = document.getElementById("table1").getElementsByTagName("tbody")[0];
+let i = 1;
 
-/*let country = () => {
-    
-    console.log(myTable);
-    for (let e of myTable.rows) {
-
-        console.log(e.cells[1].innerText);
-    }
-}*/
+for (let e of myTable.rows) {
+    let a = e.cells[i].innerText;
+    c.push(a);
+}
+i++;
+c.splice(0, 1);
+console.log(c);
 
 
 /****/
-//country();
-//years();
 
+
+//years();
+let r;
 var ctx = document.getElementById('myChart');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: arr,
+        labels: ['2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012'],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3, 5, 2, 3, 5, 2],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
+            labels: belgique,
+            data: years,
         }]
     },
     options: {
