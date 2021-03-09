@@ -15,15 +15,44 @@ for (let k = 2; k < 12; k++) {
 }
 console.log(years);
 /* GET DATA */
-
-var ctx = document.getElementById('myChart');
+/** Boucle imbriqué  */
+let dataC = [];
+var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012'],
+        labels: country,
         datasets: [{
-            labels: country,
-            data: data,
+            label: years[0],
+            data: [12, 19, 3, 5, 2, 3],
+            borderWidth: 1
+        }, {
+            label: years[1],
+            data: [2, 1, 3, 5, 2, 1],
+        }, {
+            label: years[2],
+            data: [2, 1, 3, 5, 2, 1],
+        }, {
+            label: years[3],
+            data: [2, 1, 3, 5, 2, 1],
+        }, {
+            label: years[4],
+            data: [2, 1, 3, 5, 2, 1],
+        }, {
+            label: years[5],
+            data: [2, 1, 3, 5, 2, 1],
+        }, {
+            label: years[6],
+            data: [2, 1, 3, 5, 2, 1],
+        }, {
+            label: years[7],
+            data: [2, 1, 3, 5, 2, 1],
+        }, {
+            label: years[8],
+            data: [2, 1, 3, 5, 2, 1],
+        }, {
+            label: years[9],
+            data: [2, 1, 3, 5, 2, 1],
         }]
     },
     options: {
