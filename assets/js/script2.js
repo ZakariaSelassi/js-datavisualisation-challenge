@@ -22,13 +22,13 @@ for (let i = 1; i < table2.rows.length; i++) {
 console.log(data2007);
 let data2010 = [];
 for (let i = 1; i < table2.rows.length; i++) {
-    let col1 = table2.rows[i].cells[2].innerHTML;
+    let col1 = table2.rows[i].cells[3].innerHTML;
     data2010.push(parseInt(col1));
 }
 
 var ctx = document.getElementById('myCanvas').getContext('2d');
 var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
     data: {
         labels: country2,
         datasets: [{
