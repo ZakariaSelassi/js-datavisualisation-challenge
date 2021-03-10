@@ -1,95 +1,128 @@
-/*let table = document.getElementById("table1");
-let data = [];
-for (let i = 1; i < table.rows.length; i++) {
-    let tableRow = table.rows[i];
-    let rowData = [];
-    console.log(tableRow);
-    for (let j = 1; j < tableRow.cells.length; j++) {
-        rowData.push(tableRow.cells[j].innerHTML);
-    }
-    data.push(rowData);
+let table1 = document.getElementById("table1");
+let country = [];
+/***** Get Country ******/
+for (let i = 2; i < table1.rows.length; i++) {
+    let a = table1.rows[i].cells[1].innerHTML;
+    country.push(a);
 }
-data[0].shift();
-console.log(data);
-let belgique = [];
-for (let i = 1; i < 12; i++) {
-
-    belgique.push(data[1][i]);
-}
-console.log(belgique);
-*/
+console.log(country);
+/******Get Years */
 let years = [];
-for (let i = 0; i < 11; i++) {
-    years.push(data[0][i]);
+for (let k = 2; k < 12; k++) {
+    let b = table1.rows[1].cells[k].innerHTML;
+    years.push(b);
+
 }
 console.log(years);
+/* GET DATA */
+/*Data sur la premiere année*/
+let data1 = [];
+for (let i = 2; i < table1.rows.length; i++) {
+    let col1 = table1.rows[i].cells[2].innerHTML;
+    data1.push(parseInt(col1));
+}
+let data2 = [];
+for (let i = 2; i < table1.rows.length; i++) {
+    let col2 = table1.rows[i].cells[3].innerHTML;
+    data2.push(parseInt(col2));
+}
 
-/*let table = document.getElementById("table1");
+let data3 = [];
+for (let i = 2; i < table1.rows.length; i++) {
+    let col3 = table1.rows[i].cells[4].innerHTML;
+    data3.push(parseInt(col3));
+}
+let data4 = [];
+for (let i = 2; i < table1.rows.length; i++) {
+    let col4 = table1.rows[i].cells[5].innerHTML;
+    data4.push(parseInt(col4));
+}
+let data5 = [];
+for (let i = 2; i < table1.rows.length; i++) {
+    let col5 = table1.rows[i].cells[6].innerHTML;
+    data5.push(parseInt(col5));
+}
+let data6 = [];
+for (let i = 2; i < table1.rows.length; i++) {
+    let col6 = table1.rows[i].cells[7].innerHTML;
+    data2.push(parseInt(col6));
+}
 
-let row = item.row[3];
-console.log(row);*/
-/*const obj = Object.assign({ data }, data);
-console.log(obj);*/
-/*const obj = {
-    years: [data[0]],
-    country: [data[1][0]],
-};
-
-console.log(obj.country);
-/*let swapKeysAndValues = (object) => {
-        let keysAndValuesSwapped = {};
-
-        function swap(object) {
-            for (let key in object) {
-                keysAndValuesSwapped[object[key]] = key;
-            }
-            return keysAndValuesSwapped;
-        }
-        return
-        swap(object);
-    }*/
-// get table
+let data7 = [];
+for (let i = 2; i < table1.rows.length; i++) {
+    let col7 = table1.rows[i].cells[8].innerHTML;
+    data7.push(parseInt(col7));
+}
+let data8 = [];
+for (let i = 2; i < table1.rows.length; i++) {
+    let col8 = table1.rows[i].cells[9].innerHTML;
+    data8.push(parseInt(col8));
+}
+let data9 = [];
+for (let i = 2; i < table1.rows.length; i++) {
+    let col9 = table1.rows[i].cells[10].innerHTML;
+    data9.push(parseInt(col9));
+}
+let data10 = [];
+for (let i = 2; i < table1.rows.length; i++) {
+    let col10 = table1.rows[i].cells[10].innerHTML;
+    data10.push(parseInt(col10));
+}
 /*
-let arr = [];
-let myTable = document.getElementById("table1").getElementsByTagName("tbody")[0];
-for (let elementR of myTable.rows) {
-    for (let elementCell of elementR.cells) {
-        let a = elementCell.innerText;
-        arr.push(a);
+/*******NE PAS EFFACER  */
+/*let d;
+let test = [];
+for (let i = 2; i < table1.rows.length; i++) {
+    let tabRow = table1.rows[i];
+    let tr = [];
+    console.log(tabRow);
+    for (let j = 2; j < tabRow.cells.length; j++) {
+        tr.push(tabRow.cells[j].innerText);
+
     }
+    test.push(tr);
 }
-arr.splice(0, 2);
-
-let b = arr.slice();
-console.log(b);
-*/
-let c = [];
-let myTable = document.getElementById("table1").getElementsByTagName("tbody")[0];
-let i = 1;
-
-for (let e of myTable.rows) {
-    let a = e.cells[i].innerText;
-    c.push(a);
-}
-i++;
-c.splice(0, 1);
-console.log(c);
-
-
-/****/
-
-
-//years();
-let r;
-var ctx = document.getElementById('myChart');
+console.log(test[0]);*/
+var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012'],
+        labels: country,
         datasets: [{
-            labels: belgique,
-            data: years,
-        }]
+                label: years[0],
+                data: data1,
+                borderWidth: 1
+
+            },
+            {
+                label: years[1],
+                data: data2,
+            }, {
+                label: years[2],
+                data: data3,
+            }, {
+                label: years[3],
+                data: data4,
+            }, {
+                label: years[4],
+                data: data5,
+            }, {
+                label: years[5],
+                data: data6,
+            }, {
+                label: years[6],
+                data: data7,
+            }, {
+                label: years[7],
+                data: data8,
+            }, {
+                label: years[8],
+                data: data9,
+            }, {
+                label: years[9],
+                data: data10,
+            }
+        ]
     },
     options: {
         scales: {
