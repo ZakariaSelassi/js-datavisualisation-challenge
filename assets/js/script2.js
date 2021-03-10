@@ -27,8 +27,11 @@ for (let i = 1; i < table2.rows.length; i++) {
 }
 /**** */
 function RGB() { return '#' + (Math.random().toString(16) + '0000000').slice(2, 8); }
-var ctx = document.getElementById('myCanvas').getContext('2d');
-var myChart = new Chart(ctx, {
+let ctx = document.createElement('canvas');
+ctx.setAttribute('id', 'mycanvas');
+document.getElementById('Homicides').appendChild(ctx);
+let canvas2 = document.getElementById("mycanvas").getContext('2d');
+var myChart = new Chart(canvas2, {
     type: 'line',
     data: {
         labels: country2,
