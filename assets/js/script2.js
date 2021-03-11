@@ -1,7 +1,7 @@
 let table2 = document.getElementById("table2");
 let country2 = [];
 /***** Get Country ******/
-for (let i = 2; i < table2.rows.length; i++) {
+for (let i = 1; i < table2.rows.length; i++) {
     let firstCol = table2.rows[i].cells[1].innerHTML;
     country2.push(firstCol);
 }
@@ -76,7 +76,6 @@ var myChart = new Chart(ctx, {
                 data: data2010,
                 borderWidth: 1,
                 hidden: true,
-                borderWidth: 1,
                 backgroundColor: [
                     RGB(),
                     RGB(),
