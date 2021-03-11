@@ -83,11 +83,8 @@ for (let i = 2; i < table1.rows.length; i++) {
     test.push(tr);
 }
 console.log(test[0]);*/
-let ctx = document.createElement('canvas');
-ctx.setAttribute('id', 'mycanvas1');
-document.getElementById('Crimes_et_d.C3.A9lits_enregistr.C3.A9s_par_les_services_de_police').appendChild(ctx);
-let canvas1 = document.getElementById("mycanvas1").getContext('2d');
-var myChart = new Chart(canvas1, {
+let ctx1 = document.getElementById('canvas1').getContext('2d');
+let myChart = new Chart(ctx1, {
     type: 'bar',
     data: {
         labels: country,
